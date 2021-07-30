@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+    float: left;
+}
+
+.navbar ul {
+    position: absolute;
+    padding: 25px 40px;
+    display: flex;
+    margin: revert;
+    
+}
+
+.navbar ul a {
+    text-decoration: none;
+    color: black;
+    padding: 30px;
+}
+
+.navbar li {
+    list-style: none
+}
+
+.main-container {
+    background-color:#3d4972;
+    padding: 20px;
+}
+
+.main-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards-container {
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 780px;
+}
+
+.card {
+    width: 154px;
+    background: #fff;
+    color: #313131;
+    margin: 5px;
+}
+
+.card-header {
+    padding: 2px 2px 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.card-body {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-body .number {
+    font-size: 12px;
+    color: #979696;
+}
+
+.card-body .name {
+    font-size: 14px;
+}
+
+.card-body .types {
+    display: flex;
+    font-size: 12px;
+}
+
+.card-body .types .type {
+    padding: 5px;
+    margin-right: 8px;
+    border-radius: 5px;
+}
+
+.card-body .item {
+    padding: 5px 0;
+}
+
+.poison {
+    background: #a723cc;
+    color: #fff;
+}
+
+.plant {
+    background: #9bcc50;
+    color:#313131;
+}
+
+.fire {
+    background: #f05a03;
+    color:#fff;
+}
+
+.electric {
+    background: #f2f604;
+    color:#313131;
+}
+
+.water {
+    background: #16cae2;
+    color:#fff;
+}
+
+.grass {
+    background: #38c82b;
+    color:#fff;
+}
+
+.flying {
+    background: #a2e4e4;
+    color:#313131;
+}
+
+.normal {
+    background: #adadab;
+    color:#313131;
+}
+
+.ground {
+    background: #704f07;
+    color:#fff;
+}
+
+.fighting{
+    background: #bd7b02;
+    color:#313131;
+}
+
+.psychic{
+    background: #b97fc9;
+    color:#313131;
+}
+
+.dragon{
+    background: #ee980f;
+    color:#313131;
+}
+
+.rock{
+    background: #94795b;
+    color:#fff;
+}
+
+.ice{
+    background: #dcf2f8;
+    color:#313131;
+}
+
+.ghost{
+    background: #4e0d5e;
+    color:#ffffff;
+}
+
+.fairy{
+    background: #efc9fa;
+    color:#313131;
+}
+
+.dark{
+    background: #1d1c1d;
+    color:#fff;
+}
+
+.steel{
+    background: #79747a;
+    color:#ffffff;
+}
+
+.bug{
+    background: #685f33;
+    color:#ffffff;
+}
+
+.page-buttons {
+    display: flex;
+    
+
+}
+
+.page-buttons button {
+    margin-left: 5px;
+    padding: 5px;
+    font-size: 12px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+
+footer {
+    height: 30px;
+    background-color: #fff;
+    text-align: center;
+    padding: 30px;
+}
+
+
+footer .iconos {
+    margin: 0 0 20px 0;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  footer .copy {
+    font-size: 16px;
+    text-align: center;
+  }
