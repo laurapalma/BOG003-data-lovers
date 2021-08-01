@@ -1,20 +1,23 @@
-import {paginationData} from './data.js';
+
+
+
+import { paginationData } from './data.js';
 
 
 function loadPage(page) {
   renderPokemons(page);
 }
 
-async function getPokemonList(page) {
-  const res = await fetch('./data/pokemon/pokemon.json');// asigno a la const res el resultado de llamar ese servicio(fetch) "await.. no me guarda nada en la const res hasta que fetch me responda"
-  const jsonRes = await res.json(); // fetch da una respuesta sin formato se aplica el metodo json para que se convierta en un json.
-  await renderPaginator(jsonRes.pokemon.length);
-  const newPokemonList = paginationData(jsonRes.pokemon, page);
+function getPokemonList(page) {
+
+  const dataPokemon = window.pokemon;
+  renderPaginator(dataPokemon.length);
+  const newPokemonList = paginationData(dataPokemon, page);
   return newPokemonList;//me retorna la propiedad pokemon ( array de los pokemons) 
 }
 
 async function renderPokemons(page) {
-  const pokemons = await getPokemonList(page);
+  const pokemons = getPokemonList(page);
   let html = '';
 
   pokemons.forEach(element => {
@@ -56,18 +59,17 @@ function renderPaginator(size) {
     let buttonPage =
       `
       <div class="button-page">
-        <button type="button" onClick="loadPage(${i+1})">${i+1}</button>
+        <button type="button" onClick="loadPage(${i + 1})">${i + 1}</button>
       </div>`;
 
     htmlButtons += buttonPage;
   }
-  
+
   const buttons = document.querySelector("#buttons");
   buttons.innerHTML = htmlButtons;
 }
 
 
 loadPage(1);
-
 
 

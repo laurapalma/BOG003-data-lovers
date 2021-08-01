@@ -8,9 +8,6 @@ export const anotherExample = () => {
   return 'OMG';
 };
  */
-
-
-
 export const paginationData = (pokemons, page = 1) => {
   const size = 25;
   const lastPokemon = page * size;
@@ -25,4 +22,7 @@ export const paginationData = (pokemons, page = 1) => {
   return pagePokemons;
     
 };
+
+
+
 
