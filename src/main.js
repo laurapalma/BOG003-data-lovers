@@ -59,8 +59,15 @@ function renderPaginator(size) {
     let buttonPage =
       `
       <div class="button-page">
-        <button type="button" onClick="loadPage(${i + 1})">${i + 1}</button>
+        <button type="button" id="btn${i + 1}">${i + 1}</button>
       </div>`;
+
+    document.addEventListener('click', (event) => {
+      if (event.target && event.target.id === `btn${i + 1}`) {
+        
+        renderPokemons(i + 1);
+      }
+    })
 
     htmlButtons += buttonPage;
   }
@@ -68,6 +75,8 @@ function renderPaginator(size) {
   const buttons = document.querySelector("#buttons");
   buttons.innerHTML = htmlButtons;
 }
+
+
 
 
 loadPage(1);

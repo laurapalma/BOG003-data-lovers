@@ -33,6 +33,25 @@ body {
     background-color:#3d4972;
     padding: 20px;
 }
+.main-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+    padding: 80px;
+}
+
+.types {
+    display: flex;
+    flex-flow:row wrap;
+    max-width: 130px;
+    padding: 50px 0;
+    justify-content: center;
+}
+
+.types button {
+    background: inherit;
+}
 
 .main-right {
     display: flex;
@@ -44,7 +63,7 @@ body {
     padding: 10px;
     display: flex;
     flex-flow: row wrap;
-    max-width: 780px;
+    max-width: 820px;
 }
 
 .card {
@@ -189,8 +208,6 @@ body {
 
 .page-buttons {
     display: flex;
-    
-
 }
 
 .page-buttons button {
