@@ -1,4 +1,4 @@
-import { paginationData, getPokemonsByType } from './data.js';
+import { paginationData, getPokemonsByType, sortData } from './data.js';
 
 
 let filters = { // los filtros que queremos pasar, como la pagina, el tipo y por orden
@@ -16,37 +16,33 @@ function init(filters) {
 // retorna la data transformada segun los parametros que le pasemos
 function getData(filters) {
   const dataPokemon = window.pokemon; // trae todos los pokemones
-  let newDataPokemon = [];
+  let sortDataPokemons = [];
   let typedPokemons = [];
   let pagedPokemons = [];
 
+  if (filters.sort) {
+    sortDataPokemons = sortData(dataPokemon);
+  }
 
   if (filters.type) { // si vienen el filtro de tipo traigame el tipo seleccionado
-    typedPokemons = getPokemonsByType(dataPokemon, filters.type);
+    if (sortDataPokemons.length > 0) {
+      typedPokemons = getPokemonsByType(sortDataPokemons, filters.type);
+    } else {
+      typedPokemons = getPokemonsByType(dataPokemon, filters.type);
+    }
   }
 
   if (filters.page) {  // valida si viene un filtro de paginacion
     if (filters.type) { // valida si ademas el filtro de paginacion venia con el filtro de tipo
       pagedPokemons = paginationData(typedPokemons, filters.page);
+    } else if (filters.sort) {
+      pagedPokemons = paginationData(sortDataPokemons, filters.page);
     } else {
       pagedPokemons = paginationData(dataPokemon, filters.page);
     }
   }
 
-  if (filters.sort) { //valida si viene un filtro de ordenar
-    if (pagedPokemons.length > 0) { // se valida si pagedPokemons no viene vacio quiere decir que ya fue modificado por alguno de los filtros
-      newDataPokemon = sortData(pagedPokemons);
-    } else { // si pagedPokemons no viene mayor que 0 quiere decir que la data no fue trnasformada y debemos ordenar la data original
-      newDataPokemon = sortData(dataPokemon);
-    }
-  } else { // no paso por ninguno de los filtros
-    if (pagedPokemons.length > 0) {
-      newDataPokemon = pagedPokemons;
-    } else {
-      newDataPokemon = dataPokemon;
-    }
-  }
-
+  
   if (typedPokemons.length > 0) {
     renderPaginator(typedPokemons.length); // nos crea las paginas en funcion de lo que nos retorne getdata
   } else {
@@ -127,6 +123,20 @@ types.forEach((item, index) => {
     init(filters);
   })
 })
+
+
+const sortOption = document.querySelector('#sort');
+
+sortOption.addEventListener('change', (event) => {
+  if (event.target.value === 'name') {
+    filters.sort = true;
+    init(filters);
+  } else {
+    filters.sort = false;
+    init(filters);
+  }
+});
+
 
 init(filters);
 
