@@ -1,20 +1,11 @@
-// estas funciones son de ejemplo
 
-/* export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};
- */
 export const paginationData = (pokemons, page = 1) => {
   const size = 25;
   const lastPokemon = page * size;
   const firstPokemon = lastPokemon - (size - 1);
 
   const pagePokemons = pokemons.filter((pokemon, index) => {
-    if (index >= firstPokemon && index <= lastPokemon) {
+    if (index + 1 >= firstPokemon && index + 1 <= lastPokemon) {
       return pokemon;
     }
   });
@@ -24,5 +15,7 @@ export const paginationData = (pokemons, page = 1) => {
 };
 
 
-
+export const getPokemonsByType = (pokemons, type) => {
+  return pokemons.filter(item => item.type.includes(type));
+}
 

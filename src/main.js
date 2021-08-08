@@ -1,23 +1,63 @@
+import { paginationData, getPokemonsByType } from './data.js';
 
 
-
-import { paginationData } from './data.js';
-
-
-function loadPage(page) {
-  renderPokemons(page);
+let filters = { // los filtros que queremos pasar, como la pagina, el tipo y por orden
+  page: 1,
+  type: null,
+  sort: null
 }
 
-function getPokemonList(page) {
-
-  const dataPokemon = window.pokemon;
-  renderPaginator(dataPokemon.length);
-  const newPokemonList = paginationData(dataPokemon, page);
-  return newPokemonList;//me retorna la propiedad pokemon ( array de los pokemons) 
+// funcion que lanza el proceso de render con los parametros que pasemos
+function init(filters) {
+  const data = getData(filters); // nos trae la data segun lo que encuentre si hay filtro o no
+  renderPokemons(data);
 }
 
-async function renderPokemons(page) {
-  const pokemons = getPokemonList(page);
+// retorna la data transformada segun los parametros que le pasemos
+function getData(filters) {
+  const dataPokemon = window.pokemon; // trae todos los pokemones
+  let newDataPokemon = [];
+  let typedPokemons = [];
+  let pagedPokemons = [];
+
+
+  if (filters.type) { // si vienen el filtro de tipo traigame el tipo seleccionado
+    typedPokemons = getPokemonsByType(dataPokemon, filters.type);
+  }
+
+  if (filters.page) {  // valida si viene un filtro de paginacion
+    if (filters.type) { // valida si ademas el filtro de paginacion venia con el filtro de tipo
+      pagedPokemons = paginationData(typedPokemons, filters.page);
+    } else {
+      pagedPokemons = paginationData(dataPokemon, filters.page);
+    }
+  }
+
+  if (filters.sort) { //valida si viene un filtro de ordenar
+    if (pagedPokemons.length > 0) { // se valida si pagedPokemons no viene vacio quiere decir que ya fue modificado por alguno de los filtros
+      newDataPokemon = sortData(pagedPokemons);
+    } else { // si pagedPokemons no viene mayor que 0 quiere decir que la data no fue trnasformada y debemos ordenar la data original
+      newDataPokemon = sortData(dataPokemon);
+    }
+  } else { // no paso por ninguno de los filtros
+    if (pagedPokemons.length > 0) {
+      newDataPokemon = pagedPokemons;
+    } else {
+      newDataPokemon = dataPokemon;
+    }
+  }
+
+  if (typedPokemons.length > 0) {
+    renderPaginator(typedPokemons.length); // nos crea las paginas en funcion de lo que nos retorne getdata
+  } else {
+    renderPaginator(dataPokemon.length); // nos crea las paginas en funcion de lo que nos retorne getdata
+  }
+
+  return newDataPokemon;
+}
+
+function renderPokemons(pokemonsData) {
+  const pokemons = pokemonsData;
   let html = '';
 
   pokemons.forEach(element => {
@@ -64,8 +104,8 @@ function renderPaginator(size) {
 
     document.addEventListener('click', (event) => {
       if (event.target && event.target.id === `btn${i + 1}`) {
-        
-        renderPokemons(i + 1);
+        filters.page = i + 1;
+        init(filters);
       }
     })
 
@@ -76,9 +116,22 @@ function renderPaginator(size) {
   buttons.innerHTML = htmlButtons;
 }
 
+const types = document.querySelectorAll('#types button');
+console.log(types);
+types.forEach((item, index) => {
+  item.id = `type${index + 1}`;
 
+  document.addEventListener('click', (event) => {
+    console.log("cualquier-cosa")
+    if (event.target && event.target.id === `type${index + 1}`) {
+      console.log("otra-cosa");
+      filters.page = 1;
+      filters.type = item.dataset.type;
+      init(filters);
+    }
+  })
+})
 
-
-loadPage(1);
+init(filters);
 
 
