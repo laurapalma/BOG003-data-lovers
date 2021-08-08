@@ -121,14 +121,10 @@ console.log(types);
 types.forEach((item, index) => {
   item.id = `type${index + 1}`;
 
-  document.addEventListener('click', (event) => {
-    console.log("cualquier-cosa")
-    if (event.target && event.target.id === `type${index + 1}`) {
-      console.log("otra-cosa");
-      filters.page = 1;
-      filters.type = item.dataset.type;
-      init(filters);
-    }
+  item.addEventListener('click', () => {
+    filters.page = 1;
+    filters.type = item.dataset.type;
+    init(filters);
   })
 })
 

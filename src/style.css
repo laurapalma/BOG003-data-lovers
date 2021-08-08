@@ -50,8 +50,8 @@ body {
 }
 
 .types button {
-    background: inherit;
-    pointer-events: none;
+    background: transparent;
+    cursor: pointer;
 }
 
 .main-right {
