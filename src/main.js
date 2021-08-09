@@ -20,36 +20,33 @@ function getData(filters) {
   let typedPokemons = [];
   let pagedPokemons = [];
 
-  if (filters.sort) {
-    sortDataPokemons = sortData(dataPokemon);
+  if (filters.sort) {// si viene el filtro de ordenar
+    sortDataPokemons = sortData([...dataPokemon]);
+  } else {
+    sortDataPokemons = dataPokemon;
   }
 
   if (filters.type) { // si vienen el filtro de tipo traigame el tipo seleccionado
-    if (sortDataPokemons.length > 0) {
-      typedPokemons = getPokemonsByType(sortDataPokemons, filters.type);
-    } else {
-      typedPokemons = getPokemonsByType(dataPokemon, filters.type);
-    }
+    typedPokemons = getPokemonsByType([...sortDataPokemons], filters.type);
+  } else {
+    typedPokemons = sortDataPokemons;
   }
 
   if (filters.page) {  // valida si viene un filtro de paginacion
-    if (filters.type) { // valida si ademas el filtro de paginacion venia con el filtro de tipo
-      pagedPokemons = paginationData(typedPokemons, filters.page);
-    } else if (filters.sort) {
-      pagedPokemons = paginationData(sortDataPokemons, filters.page);
-    } else {
-      pagedPokemons = paginationData(dataPokemon, filters.page);
-    }
+    pagedPokemons = paginationData([...typedPokemons], filters.page);
+  } else {
+    pagedPokemons = typedPokemons;
   }
 
-  
-  if (typedPokemons.length > 0) {
+
+
+  if (filters.type) {
     renderPaginator(typedPokemons.length); // nos crea las paginas en funcion de lo que nos retorne getdata
   } else {
-    renderPaginator(dataPokemon.length); // nos crea las paginas en funcion de lo que nos retorne getdata
+    renderPaginator(sortDataPokemons.length); // nos crea las paginas en funcion de lo que nos retorne getdata
   }
 
-  return newDataPokemon;
+  return pagedPokemons;
 }
 
 function renderPokemons(pokemonsData) {
@@ -113,13 +110,31 @@ function renderPaginator(size) {
 }
 
 const types = document.querySelectorAll('#types button');
-console.log(types);
+
 types.forEach((item, index) => {
   item.id = `type${index + 1}`;
 
   item.addEventListener('click', () => {
     filters.page = 1;
     filters.type = item.dataset.type;
+    const tag = 
+    `<span>${item.dataset.type} 
+      <button id="tag-${item.dataset.type}">X</button>
+    </span>`;
+
+    const selectedFilters = document.querySelector("#selected-filters");
+    selectedFilters.innerHTML = tag;
+
+    document.addEventListener('click', (event) => {
+      if (event.target && event.target.id === `tag-${item.dataset.type}`) {
+        filters.type = null;
+        filters.page = 1;
+        selectedFilters.innerHTML = '';
+        init(filters);
+      }
+    })
+    
+
     init(filters);
   })
 })
@@ -132,7 +147,7 @@ sortOption.addEventListener('change', (event) => {
     filters.sort = true;
     init(filters);
   } else {
-    filters.sort = false;
+    filters.sort = null;
     init(filters);
   }
 });

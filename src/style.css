@@ -44,20 +44,39 @@ body {
 .types {
     display: flex;
     flex-flow:row wrap;
-    max-width: 130px;
+    max-width: 200px;
     padding: 50px 0;
     justify-content: center;
 }
 
 .types button {
-    background: transparent;
+    background: #f0e1ce;
     cursor: pointer;
+    padding: 10px;
 }
 
 .main-right {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.filters {
+   display: flex;
+   justify-content: space-evenly;
+   width: 100%;
+}
+
+.filters #selected-filters {
+    color: #fff;
+}
+
+.filters #selected-filters span {
+    margin-left: 8px;
+}
+
+.filters #selected-filters button {
+    cursor: pointer;
 }
 
 .cards-container {
