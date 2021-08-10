@@ -1,10 +1,11 @@
-import { paginationData, getPokemonsByType, sortData } from './data.js';
+import { paginationData, getPokemonsByType, sortData, searchPokemons } from './data.js';
 
 
 let filters = { // los filtros que queremos pasar, como la pagina, el tipo y por orden
   page: 1,
   type: null,
-  sort: null
+  sort: null,
+  search: null
 }
 
 // funcion que lanza el proceso de render con los parametros que pasemos
@@ -19,9 +20,10 @@ function getData(filters) {
   let sortDataPokemons = [];
   let typedPokemons = [];
   let pagedPokemons = [];
+  let searchedPokemons = [];
 
   if (filters.sort) {// si viene el filtro de ordenar
-    sortDataPokemons = sortData([...dataPokemon]);
+    sortDataPokemons = sortData([...dataPokemon]);// llamo a mi funcion sort data
   } else {
     sortDataPokemons = dataPokemon;
   }
@@ -38,20 +40,30 @@ function getData(filters) {
     pagedPokemons = typedPokemons;
   }
 
-
-
-  if (filters.type) {
-    renderPaginator(typedPokemons.length); // nos crea las paginas en funcion de lo que nos retorne getdata
-  } else {
-    renderPaginator(sortDataPokemons.length); // nos crea las paginas en funcion de lo que nos retorne getdata
+  if (filters.search) {  // valida si viene un filtro de busqueda
+    pagedPokemons = searchPokemons([...dataPokemon], filters.search);
   }
 
+  
+  if (filters.type) {
+    renderPaginator(typedPokemons.length); // nos crea las paginas en funcion de lo que nos retorne getdata
+  } else if (filters.search) {
+    renderPaginator(pagedPokemons.length); // nos crea las paginas en funcion de lo que nos retorne getdata
+  } else {
+    renderPaginator(sortDataPokemons.length); // nos crea las paginas en funcion de lo que nos retorne getdata
+  } 
+
   return pagedPokemons;
+
 }
 
 function renderPokemons(pokemonsData) {
   const pokemons = pokemonsData;
   let html = '';
+
+  if (pokemons.length === 0 && filters.search) { // si el array es vacio
+    html = `<p class="not-found">Pokémon no encontrado !</p>`;
+  }
 
   pokemons.forEach(element => {
     let types = '';
@@ -117,8 +129,8 @@ types.forEach((item, index) => {
   item.addEventListener('click', () => {
     filters.page = 1;
     filters.type = item.dataset.type;
-    const tag = 
-    `<span>${item.dataset.type} 
+    const tag =
+      `<span>${item.dataset.type} 
       <button id="tag-${item.dataset.type}">X</button>
     </span>`;
 
@@ -133,7 +145,7 @@ types.forEach((item, index) => {
         init(filters);
       }
     })
-    
+
 
     init(filters);
   })
@@ -153,6 +165,18 @@ sortOption.addEventListener('change', (event) => {
 });
 
 
+
+const inputSearch = document.querySelector('#search');
+
+inputSearch.addEventListener('input', () => {
+  console.log(inputSearch.value);
+  filters.search = inputSearch.value;
+  init(filters);
+});
+
+
 init(filters);
+
+
 
 

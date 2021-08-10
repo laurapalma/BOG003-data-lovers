@@ -1,259 +1,296 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .navbar {
-    float: left;
+  float: left;
 }
 
 .navbar ul {
-    position: absolute;
-    padding: 25px 40px;
-    display: flex;
-    margin: revert;
-    
+  position: absolute;
+  padding: 25px 40px;
+  display: flex;
+  margin: revert;
 }
 
 .navbar ul a {
-    text-decoration: none;
-    color: black;
-    padding: 30px;
+  text-decoration: none;
+  color: black;
+  padding: 30px;
 }
 
 .navbar li {
-    list-style: none
+  list-style: none;
+}
+
+.not-found {
+    font-size: 22px;
+    padding: 20px;
 }
 
 .main-container {
-    background-color:#3d4972;
-    padding: 20px;
+  background-color: #3d4972;
+  padding: 20px;
+  height: 90px;
 }
 .main-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    float: left;
-    padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  padding: 80px;
+}
+
+h3 {
+  color: #fff;
 }
 
 .types {
-    display: flex;
-    flex-flow:row wrap;
-    max-width: 200px;
-    padding: 50px 0;
-    justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 200px;
+  padding: 50px 0;
+  justify-content: center;
 }
 
 .types button {
-    background: #f0e1ce;
-    cursor: pointer;
-    padding: 10px;
+  background: #545e83;
+  cursor: pointer;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  border: 2px solid;
+  border-color: #d0eafc;
+  position: relative;
+  transition: all 1s ease;
+}
+
+.types button:hover {
+  color: rgba(255, 255, 255, 1);
+  /* box-shadow: 0 4px 16px rgb(229, 237, 240);
+    transition: all 0.2s ease; */
+  background: #d5dbee;
+  box-shadow: 0 4px 16px rgb(168, 225, 250);
+  transition: all 0.2s ease;
 }
 
 .main-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-right p {
+  display: flex;
+  justify-content: space-evenly;
+  color: #fff;
 }
 
 .filters {
-   display: flex;
-   justify-content: space-evenly;
-   width: 100%;
+  align-items: center;  
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .filters #selected-filters {
-    color: #fff;
+  color: #fff;
 }
 
 .filters #selected-filters span {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .filters #selected-filters button {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.filters .select {
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.filters .select select {
+    margin-top: 8px;
 }
 
 .cards-container {
-    padding: 10px;
-    display: flex;
-    flex-flow: row wrap;
-    max-width: 820px;
+  padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 820px;
 }
 
 .card {
-    width: 154px;
-    background: #fff;
-    color: #313131;
-    margin: 5px;
+  width: 154px;
+  background: #fff;
+  color: #313131;
+  margin: 5px;
 }
 
 .card-header {
-    padding: 2px 2px 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+  padding: 2px 2px 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-body {
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-body .number {
-    font-size: 12px;
-    color: #979696;
+  font-size: 12px;
+  color: #979696;
 }
 
 .card-body .name {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .card-body .types {
-    display: flex;
-    font-size: 12px;
+  display: flex;
+  font-size: 12px;
 }
 
 .card-body .types .type {
-    padding: 5px;
-    margin-right: 8px;
-    border-radius: 5px;
+  padding: 5px;
+  margin-right: 8px;
+  border-radius: 5px;
 }
 
 .card-body .item {
-    padding: 5px 0;
+  padding: 5px 0;
 }
 
 .poison {
-    background: #a723cc;
-    color: #fff;
+  background: #a723cc;
+  color: #fff;
 }
 
 .plant {
-    background: #9bcc50;
-    color:#313131;
+  background: #9bcc50;
+  color: #313131;
 }
 
 .fire {
-    background: #f05a03;
-    color:#fff;
+  background: #f05a03;
+  color: #fff;
 }
 
 .electric {
-    background: #f2f604;
-    color:#313131;
+  background: #f2f604;
+  color: #313131;
 }
 
 .water {
-    background: #16cae2;
-    color:#fff;
+  background: #16cae2;
+  color: #fff;
 }
 
 .grass {
-    background: #38c82b;
-    color:#fff;
+  background: #38c82b;
+  color: #fff;
 }
 
 .flying {
-    background: #a2e4e4;
-    color:#313131;
+  background: #a2e4e4;
+  color: #313131;
 }
 
 .normal {
-    background: #adadab;
-    color:#313131;
+  background: #adadab;
+  color: #313131;
 }
 
 .ground {
-    background: #704f07;
-    color:#fff;
+  background: #704f07;
+  color: #fff;
 }
 
-.fighting{
-    background: #bd7b02;
-    color:#313131;
+.fighting {
+  background: #bd7b02;
+  color: #313131;
 }
 
-.psychic{
-    background: #b97fc9;
-    color:#313131;
+.psychic {
+  background: #b97fc9;
+  color: #313131;
 }
 
-.dragon{
-    background: #ee980f;
-    color:#313131;
+.dragon {
+  background: #ee980f;
+  color: #313131;
 }
 
-.rock{
-    background: #94795b;
-    color:#fff;
+.rock {
+  background: #94795b;
+  color: #fff;
 }
 
-.ice{
-    background: #dcf2f8;
-    color:#313131;
+.ice {
+  background: #dcf2f8;
+  color: #313131;
 }
 
-.ghost{
-    background: #4e0d5e;
-    color:#ffffff;
+.ghost {
+  background: #4e0d5e;
+  color: #ffffff;
 }
 
-.fairy{
-    background: #efc9fa;
-    color:#313131;
+.fairy {
+  background: #efc9fa;
+  color: #313131;
 }
 
-.dark{
-    background: #1d1c1d;
-    color:#fff;
+.dark {
+  background: #1d1c1d;
+  color: #fff;
 }
 
-.steel{
-    background: #79747a;
-    color:#ffffff;
+.steel {
+  background: #79747a;
+  color: #ffffff;
 }
 
-.bug{
-    background: #685f33;
-    color:#ffffff;
+.bug {
+  background: #685f33;
+  color: #ffffff;
 }
 
 .page-buttons {
-    display: flex;
+  display: flex;
 }
 
 .page-buttons button {
-    margin-left: 5px;
-    padding: 5px;
-    font-size: 12px;
-    margin-top: 15px;
-    cursor: pointer;
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 12px;
+  margin-top: 15px;
+  cursor: pointer;
 }
-
 
 footer {
-    height: 30px;
-    background-color: #fff;
-    text-align: center;
-    padding: 30px;
+  height: 30px;
+  background-color: #fff;
+  text-align: center;
+  padding: 30px;
 }
 
-
 footer .iconos {
-    margin: 0 0 20px 0;
-    padding: 30px;
-    text-align: center;
-  }
-  
-  footer .copy {
-    font-size: 16px;
-    text-align: center;
-  }
+  margin: 0 0 20px 0;
+  padding: 30px;
+  text-align: center;
+}
+
+footer .copy {
+  font-size: 16px;
+  text-align: center;
+}

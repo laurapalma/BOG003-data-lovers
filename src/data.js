@@ -28,3 +28,7 @@ function SortArray(x, y) {
   if (x.name > y.name) {return 1;}
   return 0;
 }
+
+export const searchPokemons = (pokemons, input) => {
+  return pokemons.filter(item => item.name === input);
+}

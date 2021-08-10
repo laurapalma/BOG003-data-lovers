@@ -22,19 +22,23 @@
           <li>
             <a href="">Pokédex</a>
           </li>
+          <li>
+            <div class="search">
+
+              <input type="search" id="search" class="search comun" placeholder=" Buscar por Nombre"
+                autocomplete="off" />
+
+            </div>
+          </li>
         </ul>
       </div>
-      <!-- <section class="search">
-      <form action="" method="">		    
-        <input type="searchInput" placeholder="buscar...">		    	
-        <button>Buscar</button>
-      </form>
-    </section> -->
+
+    </div>
   </header>
 
   <section class="main-container">
     <div class="main-left">
-      
+      <h3>Tipos</h3>
       <div class="types" id="types">
         <button data-type="bug">
           <img src="./img/bicho.png" alt="" width="50px" height="50px">
@@ -96,12 +100,16 @@
     </div>
     <div class="main-right">
       <div class="filters">
-        <select name="sort" id="sort">
-          <option value="number">Numero</option>
-          <option value="name">Nombre</option>
-        </select>
+        <div class="select">
+          <label>Ordenar por </label>
+          <select name="sort" id="sort">
+            <option value="number">Numero</option>
+            <option value="name">Nombre</option>
+          </select>
+        </div>
+
         <div id="selected-filters">
-         
+
         </div>
       </div>
       <div class="cards-container" id="cards">
