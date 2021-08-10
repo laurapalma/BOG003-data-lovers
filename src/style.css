@@ -36,7 +36,6 @@ body {
 .main-container {
   background-color: #3d4972;
   padding: 20px;
-  height: 90px;
 }
 .main-left {
   display: flex;
