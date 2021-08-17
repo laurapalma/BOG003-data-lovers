@@ -31,20 +31,22 @@ export const searchPokemons = (pokemons, input) => {
 export const average = (pokemons, property) => {
   const sum = pokemons.reduce((accum, item) => {
    return accum + parseInt(item.stats[property]);
-  });
+  }, 0);
   const average = sum / pokemons.length;
-  return average;
+  return average.toFixed(2);
 }
 
 export const most = (pokemons, property) => {
-  const mosted = pokemons.map((item, index) => {
-    if (parseInt(item.stats[property]) >= parseInt(pokemons[index - 1].stats[property])) {
-      return item;
-    } else {
-      return pokemons[index-1];
+  let newArray = [];
+  let counter = 0;
+
+  pokemons.forEach(item => {
+    if (parseInt(item.stats[property]) > counter) {
+      counter = parseInt(item.stats[property]);
+      newArray = {...item};
     }
   });
-  return mosted;
+  return newArray;
 }
 
 

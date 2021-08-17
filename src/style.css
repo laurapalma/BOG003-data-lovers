@@ -329,5 +329,25 @@ h1 {
 
 .pokemon-item .info span:last-child {
   text-align: center;
-  font-size: 18px;
+  font-size: 28px;
 }
+
+
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.pokemon-info img {
+  width: 150px;
+}
+
+.pokemon-info span {
+  text-align: center;
+  font-size: 28px;
+}
+
+

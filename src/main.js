@@ -1,4 +1,4 @@
-import { paginationData, getPokemonsByType, sortData, searchPokemons, average, most } from './data.js';
+import { paginationData, getPokemonsByType, sortData, searchPokemons } from './data.js';
 
 
 let filters = { // los filtros que queremos pasar, como la pagina, el tipo y por orden
@@ -185,10 +185,3 @@ inputSearch.addEventListener('input', () => {
 
 
 init(filters);
-
-
-// estadisticas
-
-const attackAverage = document.querySelector('#attack');
-attackAverage.innerHTML = average(window.pokemon, 'base-attack');
-
