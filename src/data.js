@@ -23,12 +23,33 @@ export const sortData = (pokemons) => {
   return pokemons.sort(SortArray);
 }
 
+export const searchPokemons = (pokemons, input) => {
+  return pokemons.filter(item => item.name === input);
+}
+
+
+export const average = (pokemons, property) => {
+  const sum = pokemons.reduce((accum, item) => {
+   return accum + parseInt(item.stats[property]);
+  });
+  const average = sum / pokemons.length;
+  return average;
+}
+
+export const most = (pokemons, property) => {
+  const mosted = pokemons.map((item, index) => {
+    if (parseInt(item.stats[property]) >= parseInt(pokemons[index - 1].stats[property])) {
+      return item;
+    } else {
+      return pokemons[index-1];
+    }
+  });
+  return mosted;
+}
+
+
 function SortArray(x, y) {
   if (x.name < y.name) {return -1;}
   if (x.name > y.name) {return 1;}
   return 0;
-}
-
-export const searchPokemons = (pokemons, input) => {
-  return pokemons.filter(item => item.name === input);
 }

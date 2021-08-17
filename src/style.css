@@ -293,3 +293,41 @@ footer .copy {
   font-size: 16px;
   text-align: center;
 }
+
+/* estadisticas */
+
+h1 {
+  color: #fff;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.pokemon-container {
+  display: flex;
+  flex-flow: column wrap;
+  height: 350px;
+  
+}
+
+.pokemon-item {
+  color: #fff;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+
+.pokemon-item img {
+  width: 70px;
+  padding: 5px;
+}
+
+.pokemon-item .info {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.pokemon-item .info span:last-child {
+  text-align: center;
+  font-size: 18px;
+}

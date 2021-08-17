@@ -1,4 +1,4 @@
-import { paginationData, getPokemonsByType, sortData, searchPokemons } from './data.js';
+import { paginationData, getPokemonsByType, sortData, searchPokemons, average, most } from './data.js';
 
 
 let filters = { // los filtros que queremos pasar, como la pagina, el tipo y por orden
@@ -93,7 +93,10 @@ function renderPokemons(pokemonsData) {
 
   });
   const cards = document.querySelector("#cards");
-  cards.innerHTML = html;
+  if (cards) {
+    cards.innerHTML = html;
+  }
+  
 }
 
 function renderPaginator(size) {
@@ -118,7 +121,10 @@ function renderPaginator(size) {
   }
 
   const buttons = document.querySelector("#buttons");
-  buttons.innerHTML = htmlButtons;
+  if (buttons) {
+    buttons.innerHTML = htmlButtons;
+  }
+  
 }
 
 const types = document.querySelectorAll('#types button');
@@ -154,15 +160,18 @@ types.forEach((item, index) => {
 
 const sortOption = document.querySelector('#sort');
 
-sortOption.addEventListener('change', (event) => {
-  if (event.target.value === 'name') {
-    filters.sort = true;
-    init(filters);
-  } else {
-    filters.sort = null;
-    init(filters);
-  }
-});
+if (sortOption) {
+  sortOption.addEventListener('change', (event) => {
+    if (event.target.value === 'name') {
+      filters.sort = true;
+      init(filters);
+    } else {
+      filters.sort = null;
+      init(filters);
+    }
+  });
+}
+
 
 
 
@@ -178,5 +187,8 @@ inputSearch.addEventListener('input', () => {
 init(filters);
 
 
+// estadisticas
 
+const attackAverage = document.querySelector('#attack');
+attackAverage.innerHTML = average(window.pokemon, 'base-attack');
 
