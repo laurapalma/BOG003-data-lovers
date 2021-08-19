@@ -6,7 +6,7 @@
 * [2. Investigación UX](#2-Investigación-UX)
 * [3. Historias de usuario](#3-Historias-de-usuario)
 * [4. Prototipos](#4-Prototipos)
-* [5. Diseño fina](#5-Diseño-final)
+* [5. Diseño final](#5-Diseño-final)
 * [6. Test de usabilidad](#6-Test-de-usabilidad)
 * [7. Pruebas unitarias](#7-Pruebas-unitarias)
 * [8. Checklist](#8-Checklist)
