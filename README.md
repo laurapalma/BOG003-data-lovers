@@ -21,6 +21,8 @@ el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
 Cada día generamos 2.5 millones de terabytes de datos, una cifra sin
 precedentes.
 
+https://github.com/laurapalma/BOG003-data-lovers/blob/feature/hu1/src/img/volador.png
+
 No obstante, los datos por sí mismos son de poca utilidad. Para que esas
 grandes cantidades de datos se conviertan en **información** fácil de leer para
 los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
