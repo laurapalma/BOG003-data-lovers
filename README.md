@@ -1,5 +1,3 @@
-<img src="./img/banner2.png" width="100%" alt="">
-
 # Followers Pokémon Go!!
 
 ## Índice
@@ -51,7 +49,7 @@ Nuestro proyecto esta diseñado para desktop, nos enfocamos en los colores tanto
 
 
 ## 5. Diseño final 
-### Pruebas unitarias
+
 
 
 ## 6. Test de usabilidad
