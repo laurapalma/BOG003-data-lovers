@@ -1,4 +1,5 @@
 import { paginationData, getPokemonsByType, sortData, searchPokemons } from './data.js';
+import {Pokemon} from './data/pokemon/pokemon.js';
 
 
 let filters = { // los filtros que queremos pasar, como la pagina, el tipo y por orden
@@ -16,11 +17,12 @@ function init(filters) {
 
 // retorna la data transformada segun los parametros que le pasemos
 function getData(filters) {
-  const dataPokemon = window.pokemon; // trae todos los pokemones
+  const dataPokemon = Pokemon; 
+  console.log(dataPokemon);// trae todos los pokemones
   let sortDataPokemons = [];
   let typedPokemons = [];
   let pagedPokemons = [];
-  let searchedPokemons = [];
+  
 
   if (filters.sort) {// si viene el filtro de ordenar
     sortDataPokemons = sortData([...dataPokemon]);// llamo a mi funcion sort data

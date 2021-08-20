@@ -1,19 +1,21 @@
 import { average, most } from './data.js';
+import {Pokemon} from './data/pokemon/pokemon.js';
 
-const mostAttackPokemon = most(window.pokemon, 'base-attack');
-const mostDefensePokemon = most(window.pokemon, 'base-defense');
-const mostStaminaPokemon = most(window.pokemon, 'base-stamina');
+
+const mostAttackPokemon = most(Pokemon, 'base-attack');
+const mostDefensePokemon = most(Pokemon, 'base-defense');
+const mostStaminaPokemon = most(Pokemon, 'base-stamina');
 
 
 
 const attackAverage = document.querySelector('#attack');
-attackAverage.innerHTML = average(window.pokemon, 'base-attack');
+attackAverage.innerHTML = average(Pokemon, 'base-attack');
 
 const defenseAverage = document.querySelector('#defense');
-defenseAverage.innerHTML = average(window.pokemon, 'base-defense');
+defenseAverage.innerHTML = average(Pokemon, 'base-defense');
 
 const staminaAverage = document.querySelector('#stamina');
-staminaAverage.innerHTML = average(window.pokemon, 'base-stamina');
+staminaAverage.innerHTML = average(Pokemon, 'base-stamina');
 
 const mostAttack = document.querySelector('#most-attack');
 mostAttack.innerHTML = renderMosted(mostAttackPokemon, 'base-attack');

@@ -1,5 +1,5 @@
 
-pokemon = [{
+export const Pokemon = [{
   "num": "001",
   "name": "bulbasaur",
   "generation": {
