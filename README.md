@@ -45,6 +45,7 @@ Nuestro proyecto esta diseñado para desktop, nos enfocamos en los colores tanto
 
 ### Prototipo de alta fidelidad
 
+<img src= "http://localhost:5000/" width=50px>
 
 ## 5. Diseño final 
 
