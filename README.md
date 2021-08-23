@@ -1,6 +1,3 @@
-<img src="https://user-images.githubusercontent.com/79486039/130478802-6613a54c-3a12-4076-aef3-c39d270537c3.png">
-
-
 # Followers Pokémon Go!!
 
 ## Índice
@@ -44,9 +41,9 @@ Nuestro proyecto esta diseñado para desktop, nos enfocamos en los colores tanto
 
 
 ### Prototipo de baja fidelidad
-<img src="https://user-images.githubusercontent.com/79486039/130478281-cc5d5740-3ece-4d9c-bd12-bf2d9f617c5d.jpeg">
+<img src="https://user-images.githubusercontent.com/79486039/130478281-cc5d5740-3ece-4d9c-bd12-bf2d9f617c5d.jpeg" width="50%">
 
-<img src="https://user-images.githubusercontent.com/79486039/130478336-e253bfc9-373f-4c0e-bc7a-e9a2cc93b053.jpeg">
+<img src="https://user-images.githubusercontent.com/79486039/130478336-e253bfc9-373f-4c0e-bc7a-e9a2cc93b053.jpeg" width="50%">
 
 
 ### Prototipo de alta fidelidad
