@@ -1,4 +1,4 @@
-import { paginationData, getPokemonsByType, searchPokemons, average} from '../src/data.js';
+import { paginationData, getPokemonsByType, searchPokemons, average, most, sortData } from '../src/data.js';
 import {Pokemon} from '../src/data/pokemon/pokemon.js';
 
 
@@ -81,4 +81,86 @@ describe('average', () => {
     expect(totalDefense).toBe("140.22");
   }); 
 }); 
+
+describe('average', () => {
+  it('is a function', () => {
+    expect(typeof average).toBe('function');
+  });
+
+  it('for base-stamina must return total average is 166.28', () => {
+    const pokemons = Pokemon;
+    const totalBaseStamina = "base-stamina";
+    const totalStamina = average(pokemons, totalBaseStamina);
+    expect(totalStamina).toBe("166.28");
+  }); 
+}); 
+
+
+describe('most', () => {
+  it('is a function', () => {
+    expect(typeof most).toBe('function');
+  });
+
+  it('returm most attack pokemon', () => {
+    const pokemons = Pokemon;
+    const pokemonMostAttack = "base-attack";
+    const totalMostAttack = most(pokemons, pokemonMostAttack);
+    expect(totalMostAttack.stats["base-attack"]).toBe("300");
+  }); 
+}); 
+
+
+describe('most', () => {
+  it('is a function', () => {
+    expect(typeof most).toBe('function');
+  });
+
+  it('returm most defense pokemon', () => {
+    const pokemons = Pokemon;
+    const pokemonMostDefense = "base-defense";
+    const totalMostDefense = most(pokemons, pokemonMostDefense);
+    expect(totalMostDefense.stats["base-defense"]).toBe("396");
+  }); 
+}); 
+
+
+describe('most', () => {
+  it('is a function', () => {
+    expect(typeof most).toBe('function');
+  });
+
+  it('returm most stamina pokemon', () => {
+    const pokemons = Pokemon;
+    const pokemonMostStamina = "base-stamina";
+    const totalMostStamina = most(pokemons, pokemonMostStamina);
+    expect(totalMostStamina.stats["base-stamina"]).toBe("496");
+  }); 
+}); 
+
+
+describe('sortData', () => {
+  it('is a function', () => {
+    expect(typeof sortData).toBe('function');
+  });
+
+  it('returm must first pokemon by name abra', () => {
+    const pokemons = Pokemon;
+    const pokemonSortName = sortData(pokemons);
+    expect(pokemonSortName[0].name).toBe("abra");
+  }); 
+}); 
+
+
+describe('sortData', () => {
+  it('is a function', () => {
+    expect(typeof sortData).toBe('function');
+  });
+
+  it('returm must last pokemon by name zubat', () => {
+    const pokemons = Pokemon;
+    const lastPokemonSortName = sortData(pokemons);
+    expect(lastPokemonSortName[lastPokemonSortName.length -1].name).toBe("zubat");
+  }); 
+}); 
+
 

@@ -1,5 +1,5 @@
 
-export const paginationData = (pokemons, page = 1) => {
+export const paginationData = (pokemons, page = 1) => { 
   const size = 25;
   const lastPokemon = page * size;
   const firstPokemon = lastPokemon - (size - 1);
@@ -37,16 +37,16 @@ export const average = (pokemons, property) => {
 }
 
 export const most = (pokemons, property) => {
-  let newArray = [];
+  let newItem = {};
   let counter = 0;
 
   pokemons.forEach(item => {
     if (parseInt(item.stats[property]) > counter) {
       counter = parseInt(item.stats[property]);
-      newArray = {...item};
+      newItem = {...item};
     }
   });
-  return newArray;
+  return newItem;
 }
 
 
