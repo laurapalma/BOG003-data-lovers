@@ -45,7 +45,8 @@ Nuestro proyecto esta diseñado para desktop, nos enfocamos en los colores tanto
 
 ### Prototipo de alta fidelidad
 
-<img src="https://www.figma.com/file/GF3AB5XMhzXNHvuxTyQE3J/Data-Lovers?node-id=134%3A48">
+<img src="https://user-images.githubusercontent.com/79486039/130477995-10793b39-1f7b-4688-916c-0189f5f9ae2e.png">
+>
 
 ## 5. Diseño final 
 
