@@ -1,3 +1,6 @@
+<img src="https://user-images.githubusercontent.com/79486039/130478802-6613a54c-3a12-4076-aef3-c39d270537c3.png">
+
+
 # Followers Pokémon Go!!
 
 ## Índice
@@ -41,15 +44,24 @@ Nuestro proyecto esta diseñado para desktop, nos enfocamos en los colores tanto
 
 
 ### Prototipo de baja fidelidad
+<img src="https://user-images.githubusercontent.com/79486039/130478281-cc5d5740-3ece-4d9c-bd12-bf2d9f617c5d.jpeg">
+
+<img src="https://user-images.githubusercontent.com/79486039/130478336-e253bfc9-373f-4c0e-bc7a-e9a2cc93b053.jpeg">
 
 
 ### Prototipo de alta fidelidad
 
 <img src="https://user-images.githubusercontent.com/79486039/130477995-10793b39-1f7b-4688-916c-0189f5f9ae2e.png">
->
+
+
+<img src="https://user-images.githubusercontent.com/79486039/130478686-363c93f3-69d7-4375-a3c5-42f5ad241523.png">
+
 
 ## 5. Diseño final 
 
+<img src="https://user-images.githubusercontent.com/79486039/130479199-0c62413c-9f98-4a0f-a530-57b24d71c6d2.png">
+
+<img src="https://user-images.githubusercontent.com/79486039/130479306-4656f661-4fb4-4008-af67-d8f1aa94395e.png">
 
 
 ## 6. Test de usabilidad
@@ -61,8 +73,7 @@ problemas encontrados en nuestro test que nos permitieron realizar los cambios c
 
 ## 7. Pruebas unitarias
 
-Se realizaron las respectivas pruebas unitarias a las funciones, obteniendo un coverage del 100%.
-
+Se realizaron las respectivas pruebas unitarias a las funciones.
 
 
 ## 8. Checklist
