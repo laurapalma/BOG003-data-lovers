@@ -122,7 +122,7 @@ function renderPaginator(size) { // recibe como parametro el tamaño del array d
 
   const buttons = document.querySelector("#buttons");// desde la constate buttons estoy accediendo al elemento del dom que tiene por id buttons
   if (buttons) {
-    buttons.innerHTML = htmlButtons; // estoy inyecyando en ese elemento todos los botones
+    buttons.innerHTML = htmlButtons; // estoy inyectando en ese elemento todos los botones
   }
   
 }
@@ -135,7 +135,7 @@ types.forEach((item, index) => { // itera cada uno de los botones de tipo y les 
   item.addEventListener('click', () => { // un escuchador del evento click a cada uno de los botones
     filters.page = 1; // al dar click a un boton de tipo modifico filters,page para que me traiga la pagina 1
     filters.type = item.dataset.type; // modifico filters.type para que me traiga solo los pokemons de ese tipo
-    const tag = // renderizo el nombtre del filtro que he creado
+    const tag = // renderizo el nombtre del filtro que he creado 
       `<span>${item.dataset.type} 
       <button id="tag-${item.dataset.type}">X</button>
     </span>`;
