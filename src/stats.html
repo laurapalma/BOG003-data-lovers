@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+
+    <div class="banner">
+      <img src="./img/banner2.png" width="100%" alt="">
+      <div class="navbar">
+        <ul>
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          <li>
+            <a href="stats.html">Estadísticas</a>
+          </li>
+          <li>
+        </ul>
+      </div>
+
+    </div>
+  </header>
+
+  <section class="main-container">
+  <h1>Estadísticas</h1>
+    <div class="pokemon-container">
+        <div class="pokemon-item">
+            <img src="./img/swords.svg" alt="">
+            <div class="info">
+                <span>Promedio Ataque:</span>
+                <span id="attack"></span>
+            </div>
+        </div>
+    
+        <div class="pokemon-item">
+            <img src="./img/security.svg" alt="">
+            <div class="info">
+                <span>Promedio Defensa:</span>
+                <span id="defense"></span>
+            </div>
+        </div>
+    
+        <div class="pokemon-item">
+            <img src="./img/supplement.svg" alt="">
+            <div class="info">
+                <span>Promedio Resistencia:</span>
+                <span id="stamina"></span>
+            </div>
+        </div>
+    
+        <div class="pokemon-item">   
+            <div class="info">
+                <span>Pokémon con más ataque:</span>
+                <div id="most-attack"></div>
+            </div>
+        </div>
+
+        <div class="pokemon-item">   
+            <div class="info">
+                <span>Pokémon con más defensa:</span>
+                <div id="most-defense"></div>
+            </div>
+        </div>
+
+        <div class="pokemon-item">   
+            <div class="info">
+                <span>Pokémon con más resistencia:</span>
+                <div id="most-stamina"></div>
+            </div>
+        </div>
+    
+        
+    
+        
+    </div>
+  </section>
+
+  <footer>
+
+    <div class="copy">
+      <span> @ Desarrollada por el grupo DataLovers 12 BOG003 Laboratoria - Colombia.</span>
+    </div>
+
+    <div class="iconos">
+      <img src="./img/instagram.png" width="40px" height="40px" alt="">
+      <img src="./img/facebook.png" width="40px" height="40px" alt="">
+    </div>
+  </footer>
+
+
+  <script src="stats.js" type="module"></script>
+  <script src="data/pokemon/pokemon.js"></script>
+</body>
+
+</html>
