@@ -54,3 +54,12 @@ function SortArray(a, b) { // declaramos la función sortArray recibe como param
   if (a.name > b.name) {return 1;} // si retorna 1 b se ordena antes que a
   return 0; // si retorna 0 no hace nada
 }
+
+export const filtrarDebilidad = (data, tipo) => {
+  //const result = words.filter(word => word.length > 6);
+  const pokemonDebil = data.filter(pokemon => pokemon.weaknesses.includes(tipo))
+
+
+
+  return pokemonDebil;
+}

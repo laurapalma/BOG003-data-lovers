@@ -1,6 +1,7 @@
-import { paginationData, getPokemonsByType, sortData, searchPokemons } from './data.js';
+import { paginationData, getPokemonsByType, sortData, searchPokemons, filtrarDebilidad } from './data.js';
 import {Pokemon} from './data/pokemon/pokemon.js';
 
+console.log(filtrarDebilidad(Pokemon, "grass"));
 
 let filters = { // los filtros que queremos pasar, como la pagina, el tipo y por orden
   page: 1,
